@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>アニメーション</title>
+  <link rel="stylesheet" type="text/css" href="base.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+  <script>
+    $(function(){
+      $('#button').click(function() {
+        var screenWidth = $(window).width();
+        var screenHeight = $(window).height();
+        
+        var buttonWidth = $(this).outerWidth();
+        var buttonHeight = $(this).outerHeight();
+        
+        var centerX = (screenWidth / 2) - (buttonWidth / 2);
+        var centerY = (screenHeight / 2) - (buttonHeight / 2);
+  
+        $(this).css({position: 'absolute'});
+        $(this).animate({
+          left: centerX + 'px',
+          top: centerY + 'px'
+        }, 2000);
+      });
+    });
+    </script>
+<body>
+  <div id="button">
+    <p>button</p>
+  </div><!-- button -->
+</body>
+</html>
